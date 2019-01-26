@@ -26,7 +26,7 @@ import (
 )
 
 var (
-	walletDataDirectory = btcutil.AppDataDir("btcwallet", false)
+	walletDataDirectory = btcutil.AppDataDir("grswallet", false)
 	newlineBytes        = []byte{'\n'}
 )
 

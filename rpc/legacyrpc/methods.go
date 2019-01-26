@@ -152,7 +152,7 @@ func unimplemented(interface{}, *wallet.Wallet) (interface{}, error) {
 func unsupported(interface{}, *wallet.Wallet) (interface{}, error) {
 	return nil, &btcjson.RPCError{
 		Code:    -1,
-		Message: "Request unsupported by btcwallet",
+		Message: "Request unsupported by grswallet",
 	}
 }
 
@@ -1558,9 +1558,9 @@ func signMessage(icmd interface{}, w *wallet.Wallet) (interface{}, error) {
 	}
 
 	var buf bytes.Buffer
-	wire.WriteVarString(&buf, 0, "Bitcoin Signed Message:\n")
+	wire.WriteVarString(&buf, 0, "GroestlCoin Signed Message:\n")
 	wire.WriteVarString(&buf, 0, cmd.Message)
-	messageHash := chainhash.DoubleHashB(buf.Bytes())
+	messageHash := chainhash.HashB(buf.Bytes())
 	sigbytes, err := btcec.SignCompact(btcec.S256(), privKey,
 		messageHash, true)
 	if err != nil {
@@ -1843,9 +1843,9 @@ func verifyMessage(icmd interface{}, w *wallet.Wallet) (interface{}, error) {
 	// Validate the signature - this just shows that it was valid at all.
 	// we will compare it with the key next.
 	var buf bytes.Buffer
-	wire.WriteVarString(&buf, 0, "Bitcoin Signed Message:\n")
+	wire.WriteVarString(&buf, 0, "GroestlCoin Signed Message:\n")
 	wire.WriteVarString(&buf, 0, cmd.Message)
-	expectedMessageHash := chainhash.DoubleHashB(buf.Bytes())
+	expectedMessageHash := chainhash.HashB(buf.Bytes())
 	pk, wasCompressed, err := btcec.RecoverCompact(btcec.S256(), sig,
 		expectedMessageHash)
 	if err != nil {
