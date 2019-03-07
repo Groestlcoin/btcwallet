@@ -22,6 +22,6 @@ require (
 )
 
 replace (
-	github.com/btcsuite/btcd => ../grsd
-	github.com/btcsuite/btcutil => ../grsutil
+	github.com/btcsuite/btcd => github.com/Groestlcoin/grsd v0.0.0-20190306030757-4d5197b2ae94
+	github.com/btcsuite/btcutil => github.com/Groestlcoin/grsutil v0.0.0-20190306023245-435648311a1d
 )
