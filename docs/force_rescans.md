@@ -33,15 +33,15 @@ two situations when this holds true:
 
 The second case is how a forced rescan is performed.
 
-btcwallet will not drop transaction history by itself, as this is something that
+grswallet will not drop transaction history by itself, as this is something that
 should not be necessary under normal wallet operation.  However, a tool,
 `dropwtxmgr`, is provided in the `cmd/dropwtxmgr` directory which may be used to
 drop the wallet transaction manager (wtxmgr) history from a wallet database.
-The tool may already be installed in your PATH, but if not, installing it is easy:
+To compile the tool:
 
 ```
-$ cd $GOPATH/src/github.com/btcsuite/btcwallet/cmd/dropwtxmgr
-$ go get
+$ cd grswallet
+$ make build-all
 ```
 
 Dropping transaction history given the default database location can be
@@ -49,9 +49,9 @@ performed by stopping wallet (to release the database) and running the tool,
 answering yes to the prompt:
 
 ```
-$ dropwtxmgr
-Database path: /home/username/.btcwallet/mainnet/wallet.db
-Drop all btcwallet transaction history? [y/N] y
+$ ./dropwtxmgr
+Database path: /home/username/.grswallet/mainnet/wallet.db
+Drop all grswallet transaction history? [y/N] y
 Dropping wtxmgr namespace
 ```
 
@@ -60,18 +60,18 @@ different network (e.g. testnet or simnet) must be dropped, the full database
 path may be specified:
 
 ```
-$ dropwtxmgr --db ~/.btcwallet/testnet/wallet.db
-Database path: /home/username/.btcwallet/testnet/wallet.db
-Drop all btcwallet transaction history? [y/N] y
+$ ./dropwtxmgr --db ~/.grswallet/testnet/wallet.db
+Database path: /home/username/.grswallet/testnet/wallet.db
+Drop all grswallet transaction history? [y/N] y
 Dropping wtxmgr namespace
 ```
 
-After dropping transaction history, btcwallet may be restarted and a full rescan
+After dropping transaction history, grswallet may be restarted and a full rescan
 will be triggered to sync the wallet:
 
 ```
-$ btcwallet
-14:05:31 2015-04-13 [INF] BTCW: No recorded transaction history -- needs full rescan
+$ ./grswallet
+14:05:31 2015-04-13 [INF] grsw: No recorded transaction history -- needs full rescan
 ...
 14:05:31 2015-04-13 [INF] WLLT: Started rescan from block 000000000000e37b0f99af2e434834123b5459e31e17937169ce81ed0cc4d61c (height 193191) for 1 address
 ...
