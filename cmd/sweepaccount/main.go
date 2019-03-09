@@ -42,8 +42,8 @@ func errContext(err error, context string) error {
 
 // Flags.
 var opts = struct {
-	TestNet3              bool                `long:"testnet" description:"Use the test bitcoin network (version 3)"`
-	SimNet                bool                `long:"simnet" description:"Use the simulation bitcoin network"`
+	TestNet3              bool                `long:"testnet" description:"Use the test groestlcoin network (version 3)"`
+	SimNet                bool                `long:"simnet" description:"Use the simulation groestlcoin network"`
 	RPCConnect            string              `short:"c" long:"connect" description:"Hostname[:port] of wallet RPC server"`
 	RPCUsername           string              `short:"u" long:"rpcuser" description:"Wallet RPC username"`
 	RPCCertificateFile    string              `long:"cafile" description:"Wallet RPC TLS certificate"`
@@ -81,7 +81,7 @@ func init() {
 	}
 
 	if opts.TestNet3 && opts.SimNet {
-		fatalf("Multiple bitcoin networks may not be used simultaneously")
+		fatalf("Multiple groestlcoin networks may not be used simultaneously")
 	}
 	var activeNet = &netparams.MainNetParams
 	if opts.TestNet3 {
