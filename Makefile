@@ -11,5 +11,8 @@ install: build
 reset-mod:
 	git checkout go.mod go.sum
 
+test:
+	GO111MODULE=on go test ./...
+
 clean:
 	rm -f grswallet btcwallet dropwtxmgr sweepaccount

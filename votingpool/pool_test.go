@@ -159,10 +159,10 @@ func TestDepositScriptAddress(t *testing.T) {
 			reqSigs: 2,
 			pubKeys: vp.TstPubKeys[0:3],
 			addresses: map[uint32]string{
-				0: "3Hb4xcebcKg4DiETJfwjh8sF4uDw9rqtVC",
-				1: "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6",
-				2: "3Qt1EaKRD9g9FeL2DGkLLswhK1AKmmXFSe",
-				3: "3PbExiaztsSYgh6zeMswC49hLUwhTQ86XG",
+				0: "3Hb4xcebcKg4DiETJfwjh8sF4uDw6EnbtN",
+				1: "34eVkREKgvvGASZW7hkgE2uNc1yya1UDSZ",
+				2: "3Qt1EaKRD9g9FeL2DGkLLswhK1AKkubMkH",
+				3: "3PbExiaztsSYgh6zeMswC49hLUwhUn71xC",
 			},
 		},
 	}
@@ -956,7 +956,7 @@ func branchErrorFormat(orig, want, got []*hdkeychain.ExtendedKey) (origOrder, wa
 }
 
 func createTestPubKeys(t *testing.T, number, offset int) []*hdkeychain.ExtendedKey {
-	xpubRaw := "xpub661MyMwAqRbcFwdnYF5mvCBY54vaLdJf8c5ugJTp5p7PqF9J1USgBx12qYMnZ9yUiswV7smbQ1DSweMqu8wn7Jociz4PWkuJ6EPvoVEgMw7"
+	xpubRaw := "xpub661MyMwAqRbcFwdnYF5mvCBY54vaLdJf8c5ugJTp5p7PqF9J1USgBx12qYMnZ9yUiswV7smbQ1DSweMqu8wn7Jociz4PWkuJ6EPvoVu5Fvh"
 	xpubKey, err := hdkeychain.NewKeyFromString(xpubRaw)
 	if err != nil {
 		t.Fatalf("Failed to generate new key: %v", err)
@@ -1013,7 +1013,7 @@ func TestEmpowerSeriesNeuterFailed(t *testing.T) {
 	// A private key with bad version (0xffffffff) will trigger an
 	// error in (k *ExtendedKey).Neuter and the associated error path
 	// in EmpowerSeries.
-	badKey := "wM5uZBNTYmaYGiK8VaGi7zPGbZGLuQgDiR2Zk4nGfbRFLXwHGcMUdVdazRpNHFSR7X7WLmzzbAq8dA1ViN6eWKgKqPye1rJTDQTvBiXvZ7E3nmdx"
+	badKey := "wM5uZBNTYmaYGiK8VaGi7zPGbZGLuQgDiR2Zk4nGfbRFLXwHGcMUdVdazRpNHFSR7X7WLmzzbAq8dA1ViN6eWKgKqPye1rJTDQTvBiXvZ77okY2L"
 	err = pool.EmpowerSeries(ns, seriesID, badKey)
 
 	vp.TstCheckError(t, "", err, vp.ErrKeyNeuter)

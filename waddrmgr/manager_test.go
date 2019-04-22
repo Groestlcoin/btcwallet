@@ -729,9 +729,9 @@ func testImportPrivateKey(tc *testContext) bool {
 	}{
 		{
 			name: "wif for uncompressed pubkey address",
-			in:   "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ",
+			in:   "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbRuerSS",
 			expected: expectedAddr{
-				address:     "1GAehh7TsJAHuUAeKZcXf5CnwuGuGgyX2S",
+				address:     "FkLN9bqqRnqqM5BmCfc17b17c4YrtvAVWM",
 				addressHash: hexToBytes("a65d1a239d4ec666643d350c7bb8fc44d2881128"),
 				internal:    false,
 				imported:    true,
@@ -745,9 +745,9 @@ func testImportPrivateKey(tc *testContext) bool {
 		},
 		{
 			name: "wif for compressed pubkey address",
-			in:   "KwdMAjGmerYanjeui5SHS7JkmpZvVipYvB2LJGU1ZxJwYvP98617",
+			in:   "KwdMAjGmerYanjeui5SHS7JkmpZvVipYvB2LJGU1ZxJwYvLSkrFZ",
 			expected: expectedAddr{
-				address:     "1LoVGDgRs9hTfTNJNuXKSpywcbdvwRXpmK",
+				address:     "FpyCi8QoReP174PRG1WnuLnGGkutcrPeMz",
 				addressHash: hexToBytes("d9351dcbad5b8f3b8bfa2f2cdc85c28118ca9326"),
 				internal:    false,
 				imported:    true,
@@ -900,7 +900,7 @@ func testImportScript(tc *testContext) bool {
 				"ed9493a9fc20fdb4a714808f0b680f1f1d935277" +
 				"48b5e3f629ffac"),
 			expected: expectedAddr{
-				address:     "3MbyWAu9UaoBewR3cArF1nwf4aQgVwzrA5",
+				address:     "3MbyWAu9UaoBewR3cArF1nwf4aQgVWAVjD",
 				addressHash: hexToBytes("da6e6a632d96dc5530d7b3c9f3017725d023093e"),
 				internal:    false,
 				imported:    true,
@@ -921,7 +921,7 @@ func testImportScript(tc *testContext) bool {
 				"6ffefb2238af8627363bdf2ed97c1f89784a1aec" +
 				"db43384f11d2acc64443c7fc299cef0400421a53ae"),
 			expected: expectedAddr{
-				address:     "34CRZpt8j81rgh9QhzuBepqPi4cBQSjhjr",
+				address:     "34CRZpt8j81rgh9QhzuBepqPi4cBNpq1q5",
 				addressHash: hexToBytes("1b800cec1fe92222f36a502c139bed47c5959715"),
 				internal:    false,
 				imported:    true,
@@ -1058,7 +1058,7 @@ func testMarkUsed(tc *testContext) bool {
 		{
 			name: "managed address",
 			typ:  addrPubKeyHash,
-			in:   hexToBytes("2ef94abb9ee8f785d087c3ec8d6ee467e92d0d0a"),
+			in:   hexToBytes("b251e7b5a9f5fbd0770585e967ee6df28dc792c0"),
 		},
 		{
 			name: "script address",
@@ -1755,7 +1755,7 @@ func testSync(tc *testContext) bool {
 
 	// If we update to a new more recent block time stamp, then upon
 	// retrieval it should be returned as the best known state.
-	latestHash, err := chainhash.NewHash(seed)
+	latestHash, err := chainhash.NewHash(originalSeed)
 	if err != nil {
 		tc.t.Errorf("%v", err)
 		return false

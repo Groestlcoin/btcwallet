@@ -35,8 +35,8 @@ func TestStartWithdrawal(t *testing.T) {
 	vp.TstCreateSeries(t, dbtx, pool, []vp.TstSeriesDef{def})
 	// Create eligible inputs and the list of outputs we need to fulfil.
 	vp.TstCreateSeriesCreditsOnStore(t, dbtx, pool, def.SeriesID, []int64{5e6, 4e6}, store)
-	address1 := "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6"
-	address2 := "3PbExiaztsSYgh6zeMswC49hLUwhTQ86XG"
+	address1 := "34eVkREKgvvGASZW7hkgE2uNc1yya1UDSZ"
+	address2 := "3PbExiaztsSYgh6zeMswC49hLUwhUn71xC"
 	requests := []vp.OutputRequest{
 		vp.TstNewOutputRequest(t, 1, address1, 4e6, mgr.ChainParams()),
 		vp.TstNewOutputRequest(t, 2, address2, 1e6, mgr.ChainParams()),
@@ -80,7 +80,7 @@ func TestStartWithdrawal(t *testing.T) {
 	// or the code is changed in a way that causes the generated transaction to
 	// change (e.g. different inputs/outputs), the ntxid will change too and
 	// this will have to be updated.
-	ntxid := vp.Ntxid("eb753083db55bd0ad2eb184bfd196a7ea8b90eaa000d9293e892999695af2519")
+	ntxid := vp.Ntxid("448cf00ba4b9ac93ec13fc33159c66f61900eafc4c11401c4695b09238cc216c")
 	txSigs := status.Sigs()[ntxid]
 
 	// Finally we use SignTx() to construct the SignatureScripts (using the raw

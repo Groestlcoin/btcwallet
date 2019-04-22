@@ -109,9 +109,9 @@ func ExampleStore_Balance() {
 	printBalances(105)
 
 	// Output:
-	// 10 BTC, 0 BTC, 0 BTC
-	// 10 BTC, 10 BTC, 0 BTC
-	// 10 BTC, 10 BTC, 10 BTC
+	// 10 GRS, 0 GRS, 0 GRS
+	// 10 GRS, 10 GRS, 0 GRS
+	// 10 GRS, 10 GRS, 10 GRS
 }
 
 func ExampleStore_Rollback() {
@@ -250,6 +250,6 @@ func Example_basicUsage() {
 	}
 
 	// Output:
-	// 5 BTC
+	// 5 GRS
 	// true
 }

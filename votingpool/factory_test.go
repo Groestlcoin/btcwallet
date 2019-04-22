@@ -62,7 +62,7 @@ func createWithdrawalTx(t *testing.T, dbtx walletdb.ReadWriteTx, pool *Pool, inp
 	}
 	for i, amount := range outputAmounts {
 		request := TstNewOutputRequest(
-			t, uint32(i), "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6", btcutil.Amount(amount), net)
+			t, uint32(i), "34eVkREKgvvGASZW7hkgE2uNc1yya1UDSZ", btcutil.Amount(amount), net)
 		tx.addOutput(request)
 	}
 	return tx
@@ -394,7 +394,7 @@ func TstNewOutputRequest(t *testing.T, transaction uint32, address string, amoun
 	net *chaincfg.Params) OutputRequest {
 	addr, err := btcutil.DecodeAddress(address, net)
 	if err != nil {
-		t.Fatalf("Unable to decode address %s", address)
+		t.Fatalf("Unable to decode address %s: %v", address, err)
 	}
 	pkScript, err := txscript.PayToAddrScript(addr)
 	if err != nil {
@@ -450,8 +450,8 @@ func createAndFulfillWithdrawalRequests(t *testing.T, dbtx walletdb.ReadWriteTx,
 	params := pool.Manager().ChainParams()
 	seriesID, eligible := TstCreateCreditsOnNewSeries(t, dbtx, pool, []int64{2e6, 4e6})
 	requests := []OutputRequest{
-		TstNewOutputRequest(t, 1, "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6", 3e6, params),
-		TstNewOutputRequest(t, 2, "3PbExiaztsSYgh6zeMswC49hLUwhTQ86XG", 2e6, params),
+		TstNewOutputRequest(t, 1, "34eVkREKgvvGASZW7hkgE2uNc1yya1UDSZ", 3e6, params),
+		TstNewOutputRequest(t, 2, "3PbExiaztsSYgh6zeMswC49hLUwhUn71xC", 2e6, params),
 	}
 	changeStart := TstNewChangeAddress(t, pool, seriesID, 0)
 	dustThreshold := btcutil.Amount(1e4)

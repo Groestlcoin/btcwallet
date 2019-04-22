@@ -95,7 +95,7 @@ func NewTxRecord(serializedTx []byte, received time.Time) (*TxRecord, error) {
 		str := "failed to deserialize transaction"
 		return nil, storeError(ErrInput, str, err)
 	}
-	copy(rec.Hash[:], chainhash.DoubleHashB(serializedTx))
+	copy(rec.Hash[:], chainhash.HashB(serializedTx))
 	return rec, nil
 }
 
