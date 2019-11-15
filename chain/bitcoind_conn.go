@@ -161,7 +161,7 @@ func (c *BitcoindConn) Stop() {
 func (c *BitcoindConn) blockEventHandler() {
 	defer c.wg.Done()
 
-	log.Info("Started listening for bitcoind block notifications via ZMQ "+
+	log.Info("Started listening for groestlcoind block notifications via ZMQ "+
 		"on", c.zmqBlockConn.RemoteAddr())
 
 	for {
@@ -242,7 +242,7 @@ func (c *BitcoindConn) blockEventHandler() {
 func (c *BitcoindConn) txEventHandler() {
 	defer c.wg.Done()
 
-	log.Info("Started listening for bitcoind transaction notifications "+
+	log.Info("Started listening for groestlcoind transaction notifications "+
 		"via ZMQ on", c.zmqTxConn.RemoteAddr())
 
 	for {

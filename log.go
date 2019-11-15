@@ -59,7 +59,7 @@ var (
 	chainLog     = backendLog.Logger("CHNS")
 	grpcLog      = backendLog.Logger("GRPC")
 	legacyRPCLog = backendLog.Logger("RPCS")
-	btcnLog      = backendLog.Logger("BTCN")
+	btcnLog      = backendLog.Logger("GRSN")
 )
 
 // Initialize package-global logger variables.
@@ -81,7 +81,7 @@ var subsystemLoggers = map[string]btclog.Logger{
 	"CHNS": chainLog,
 	"GRPC": grpcLog,
 	"RPCS": legacyRPCLog,
-	"BTCN": btcnLog,
+	"GRSN": btcnLog,
 }
 
 // initLogRotator initializes the logging rotater to write logs to logFile and

@@ -373,7 +373,7 @@ func (c *BitcoindClient) RescanBlocks(
 	for _, hash := range blockHashes {
 		header, err := c.GetBlockHeaderVerbose(&hash)
 		if err != nil {
-			log.Warnf("Unable to get header %s from bitcoind: %s",
+			log.Warnf("Unable to get header %s from groestlcoind: %s",
 				hash, err)
 			continue
 		}
@@ -386,7 +386,7 @@ func (c *BitcoindClient) RescanBlocks(
 
 		block, err := c.GetBlock(&hash)
 		if err != nil {
-			log.Warnf("Unable to get block %s from bitcoind: %s",
+			log.Warnf("Unable to get block %s from groestlcoind: %s",
 				hash, err)
 			continue
 		}
