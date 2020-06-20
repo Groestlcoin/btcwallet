@@ -11,7 +11,7 @@ stays very similar to it.
 
 ## Requirements
 
-[Go](http://golang.org) 1.11 or newer.
+[Go](http://golang.org) 1.12 or newer.
 
 ## Installation
 

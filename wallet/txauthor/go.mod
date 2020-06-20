@@ -12,3 +12,8 @@ require (
 replace github.com/btcsuite/btcwallet/wallet/txrules => ../txrules
 
 replace github.com/btcsuite/btcwallet/wallet/txsizes => ../txsizes
+
+replace (
+	github.com/btcsuite/btcd => github.com/Groestlcoin/grsd v0.20.1-grs
+	github.com/btcsuite/btcutil => github.com/Groestlcoin/grsutil v0.5.0-grs3
+)

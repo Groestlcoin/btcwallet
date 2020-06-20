@@ -6,7 +6,7 @@ require (
 	github.com/btcsuite/btcutil v0.0.0-20190425235716-9e5f4b9a998d
 	github.com/btcsuite/btcwallet/wallet/txauthor v1.0.0
 	github.com/btcsuite/btcwallet/wallet/txrules v1.0.0
-	github.com/btcsuite/btcwallet/walletdb v1.0.0
+	github.com/btcsuite/btcwallet/walletdb v1.2.0
 	github.com/btcsuite/btcwallet/wtxmgr v1.0.0
 	github.com/btcsuite/websocket v0.0.0-20150119174127-31079b680792
 	github.com/davecgh/go-spew v1.1.1
@@ -36,6 +36,6 @@ go 1.13
 
 replace (
 	github.com/btcsuite/btcd => github.com/Groestlcoin/grsd v0.20.1-grs
-	github.com/btcsuite/btcutil => github.com/Groestlcoin/grsutil v0.5.0-grsd-0-8
-	github.com/lightninglabs/neutrino => github.com/Groestlcoin/neutrino v0.11.0-grs
+	github.com/btcsuite/btcutil => github.com/Groestlcoin/grsutil v0.5.0-grs3
+	github.com/lightninglabs/neutrino => github.com/Groestlcoin/neutrino v0.11.0-grs-r2
 )

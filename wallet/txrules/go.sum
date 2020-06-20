@@ -1,3 +1,9 @@
+github.com/Groestlcoin/go-groestl-hash v0.0.0-20181012171753-790653ac190c h1:8bYNmjELeCj7DEh/dN7zFzkJ0upK3GkbOC/0u1HMQ5s=
+github.com/Groestlcoin/go-groestl-hash v0.0.0-20181012171753-790653ac190c/go.mod h1:DwgC62sAn4RgH4L+O8REgcE7f0XplHPNeRYFy+ffy1M=
+github.com/Groestlcoin/grsd v0.20.1-grs h1:5H+I5pL+wu8hIN/9p90LEdVyrSOyI66p3Le9ZBBleA8=
+github.com/Groestlcoin/grsd v0.20.1-grs/go.mod h1:c381FUxkRl24Sh2eyxzDF9t/T+dRSXIc7znyVN/sqjA=
+github.com/Groestlcoin/grsutil v0.5.0-grs3 h1:m5Z7TN4UhK00AFDnp1dB1vkH/pGEmhqoGJYu3mI7tN8=
+github.com/Groestlcoin/grsutil v0.5.0-grs3/go.mod h1:kPjACMkCifkaSZdM2Ylu3UfwIAMD8phQOdakv8MGmIw=
 github.com/aead/siphash v1.0.1/go.mod h1:Nywa3cDsYNNK3gaciGTWPwHt0wlpNV15vwmswBAUSII=
 github.com/btcsuite/btcd v0.0.0-20190824003749-130ea5bddde3 h1:A/EVblehb75cUgXA5njHPn0kLAsykn6mJGz7rnmW5W0=
 github.com/btcsuite/btcd v0.0.0-20190824003749-130ea5bddde3/go.mod h1:3J08xEfcugPacsc34/LKRU2yO7YmuT8yt28J8k2+rrI=
